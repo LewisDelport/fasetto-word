@@ -1,4 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using Fasetto.Word.Core;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Fasetto.Word
 {
@@ -22,6 +25,18 @@ namespace Fasetto.Word
         /// the minimum width of this dialog
         /// </summary>
         public int WindowMinimumWidth { get; set; } = 250;
+        /// <summary>
+        /// the minimum height of this dialog
+        /// </summary>
+        public int WindowMinimumHeight { get; set; } = 100;
+        /// <summary>
+        /// the height of the title bar
+        /// </summary>
+        public int TitleHeight { get; set; } = 30;
+        /// <summary>
+        /// the title for this dialog
+        /// </summary>
+        public string Title { get; set; }
 
         #endregion
 
@@ -36,9 +51,59 @@ namespace Fasetto.Word
         /// </summary>
         public BaseDialogUserControl()
         {
+            //create a new dialog window
+            mDialogWindow = new DialogWindow();
 
+            mDialogWindow.ViewModel = new DialogWindowViewModel(mDialogWindow);
         }
 
         #endregion
+
+        #region Public Dialog Show Methods
+
+        /// <summary>
+        /// display a single message box to the user
+        /// </summary>
+        /// <param name="viewModel">the view model</param>
+        /// <typeparam name="T">the view model type for this control</typeparam>
+        /// <returns></returns>
+        public Task ShowDialog<T>(T viewModel)
+            where T : BaseDialogViewModel
+        {
+            //create a task to await the dialog closing
+            var tcs = new TaskCompletionSource<bool>();
+
+            //run on UI thread
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                try
+                {
+                    //match controls expected sizes to the dialog windows view model
+                    mDialogWindow.ViewModel.WindowMinimumWidth = WindowMinimumWidth;
+                    mDialogWindow.ViewModel.WindowMinimumHeight = WindowMinimumHeight;
+                    mDialogWindow.ViewModel.TitleHeight = TitleHeight;
+                    mDialogWindow.ViewModel.Title = string.IsNullOrEmpty(viewModel.Title) ? Title : viewModel.Title;
+
+                    //set this control to the dialog window content
+                    mDialogWindow.ViewModel.Content = this;
+
+                    //setup this controls data context binding to the view model
+                    DataContext = viewModel;
+
+                    //show dialog
+                    mDialogWindow.ShowDialog();
+                }
+                finally
+                {
+                    //let caller know we finished
+                    tcs.TrySetResult(true);
+                }
+            });
+
+            return tcs.Task;
+        }
+
+        #endregion
+
     }
 }

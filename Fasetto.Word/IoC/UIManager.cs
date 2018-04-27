@@ -17,24 +17,7 @@ namespace Fasetto.Word
         /// <returns></returns>
         public Task ShowMessage(MessageBoxDialogViewModel viewModel)
         {
-            //create a task to await the dialog closing
-            var tcs = new TaskCompletionSource<bool>();
-
-            //run on UI thread
-            Application.Current.Dispatcher.Invoke(() =>
-            {
-                try
-                {
-                    new DialogWindow().ShowDialog();
-                }
-                finally
-                {
-                    //let caller know we finished
-                    tcs.TrySetResult(true);
-                }
-            });
-
-            return tcs.Task;
+            return new DialogMessageBox().ShowDialog(viewModel);
         }
     }
 }
