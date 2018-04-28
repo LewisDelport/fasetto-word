@@ -57,6 +57,8 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
             //wait for animation to finish
             await Task.Delay((int)seconds * 1000);
+            //fully hide the element
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
@@ -108,6 +110,8 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
             //wait for animation to finish
             await Task.Delay((int)seconds * 1000);
+            //fully hide the element
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
@@ -159,9 +163,56 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
             //wait for animation to finish
             await Task.Delay((int)seconds * 1000);
+            //fully hide the element
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
 
+        #region Fade In / Out
+
+        /// <summary>
+        /// fades an element in
+        /// </summary>
+        /// <param name="element">the element to animate</param>
+        /// <param name="seconds">the time in seconds the animation will take</param>
+        /// <returns></returns>
+        public static async Task FadeInAsync(this FrameworkElement element, float seconds = 0.3f)
+        {
+            //create the storyboard
+            var sb = new Storyboard();
+            //add fade in animation
+            sb.AddFadeIn(seconds);
+            //start animating
+            sb.Begin(element);
+            //make page visible
+            element.Visibility = Visibility.Visible;
+            //wait for animation to finish
+            await Task.Delay((int)seconds * 1000);
+        }
+        /// <summary>
+        /// fades an element out
+        /// </summary>
+        /// <param name="element">the element to animate</param>
+        /// <param name="seconds">the time in seconds the animation will take</param>
+        /// <returns></returns>
+        public static async Task FadeOutAsync(this FrameworkElement element, float seconds = 0.3f)
+        {
+            //create the storyboard
+            var sb = new Storyboard();
+            //add fade in animation
+            sb.AddFadeOut(seconds);
+            //start animating
+            sb.Begin(element);
+            //make page visible
+            element.Visibility = Visibility.Visible;
+            //wait for animation to finish
+            await Task.Delay((int)seconds * 1000);
+            //fully hide the element
+            element.Visibility = Visibility.Hidden;
+        }
+
+        #endregion
+        
     }
 }

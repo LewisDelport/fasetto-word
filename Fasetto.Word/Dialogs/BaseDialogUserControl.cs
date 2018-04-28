@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Fasetto.Word
 {
@@ -42,6 +43,11 @@ namespace Fasetto.Word
 
         #region Public Commands
 
+        /// <summary>
+        /// closes this dialog
+        /// </summary>
+        public ICommand CloseCommand { get; private set; }
+
         #endregion
 
         #region Constructor
@@ -55,6 +61,8 @@ namespace Fasetto.Word
             mDialogWindow = new DialogWindow();
 
             mDialogWindow.ViewModel = new DialogWindowViewModel(mDialogWindow);
+
+            CloseCommand = new RelayCommand(() => mDialogWindow.Close());
         }
 
         #endregion

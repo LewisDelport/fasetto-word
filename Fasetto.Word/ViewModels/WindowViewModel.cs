@@ -91,6 +91,10 @@ namespace Fasetto.Word
         /// The height of the title bar / caption of the window
         /// </summary>
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
+        /// <summary>
+        /// true if we should show the settings menu
+        /// </summary>
+        public bool DimmableOverlayVisible { get; set; }
 
         #endregion
 

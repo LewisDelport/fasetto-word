@@ -49,7 +49,8 @@
                             Foreground="{StaticResource WordDarkBlueBrush}"
                             Grid.Column="2"
                             Style="{StaticResource IconButton}"
-                            Content="{StaticResource FontAwesomeCogIcon}"/>
+                            Content="{StaticResource FontAwesomeCogIcon}"
+                            Command="{Binding SettingsViewModel.OpenCommand, Source={x:Static local:ViewModelLocator.Instance}}"/>
 
                     </Grid>
 
