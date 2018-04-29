@@ -28,7 +28,6 @@ namespace Fasetto.Word
 
         #endregion
 
-
         #region Contructor
 
         /// <summary>
@@ -58,7 +57,7 @@ namespace Fasetto.Word
                 //set the column definition width to the new value
                 (d as TextEntryControl).LabelColumnDefinition.Width = (GridLength)e.NewValue;
             }
-            catch (Exception ex)
+            catch
             {
                 //make developer aware of potential issue
                 Debugger.Break();

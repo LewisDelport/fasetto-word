@@ -10,12 +10,12 @@ namespace Fasetto.Word.Core
         /// <summary>
         /// the current page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
 
         /// <summary>
         /// true if the side menu should be shown
         /// </summary>
-        public bool SideMenuVisible { get; set; } = true;
+        public bool SideMenuVisible { get; set; }
         /// <summary>
         /// true if the settings menu should be shown
         /// </summary>
@@ -27,6 +27,9 @@ namespace Fasetto.Word.Core
         /// <param name="page">the page to go to</param>
         public void GoToPage(ApplicationPage page)
         {
+            //always hide settings page if we are changing pages
+            SettingsMenuVisible = false;
+
             //set the current page
             CurrentPage = page;
 
