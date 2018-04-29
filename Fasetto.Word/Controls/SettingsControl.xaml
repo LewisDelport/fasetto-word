@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fasetto.Word"
+             xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d" 
+             d:DataContext="{x:Static core:SettingsDesignModel.Instance}"
              >
 
     <Border Background="{StaticResource ForegroundLightBrush}"
@@ -85,12 +87,13 @@
                 </Grid>
                 
                 <!-- profile details -->
-                <StackPanel Grid.Column="1">
-                    <local:TextEntryControl />
-                    <local:TextEntryControl />
-                    <local:TextEntryControl />
-                    <local:TextEntryControl />
-                    <local:TextEntryControl />
+                <StackPanel Grid.Column="1"
+                            local:TextEntryWidthMatcherProperty.Value="True"
+                            >
+                    <local:TextEntryControl DataContext="{Binding Name}"/>
+                    <local:TextEntryControl DataContext="{Binding Username}"/>
+                    <local:TextEntryControl DataContext="{Binding Password}"/>
+                    <local:TextEntryControl DataContext="{Binding Email}"/>
                 </StackPanel>
                 
             </Grid>

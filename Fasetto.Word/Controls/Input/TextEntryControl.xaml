@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Fasetto.Word"
              xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d"
-             DataContext="{x:Static core:TextEntryDesignModel.Instance}"
+             d:DataContext="{x:Static core:TextEntryDesignModel.Instance}"
              >
     
     <!-- grey underline -->
@@ -47,7 +47,7 @@
             
             <Grid.ColumnDefinitions>
                 <!-- label -->
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Name="LabelColumnDefinition" Width="Auto"/>
                 <!-- text -->
                 <ColumnDefinition Width="*"/>
                 <!-- button -->
@@ -56,10 +56,12 @@
 
             <!-- label -->
             <TextBlock Grid.Column="0"
+                       Name="Label"
                        FontFamily="{StaticResource LatoRegular}"
                        Text="{Binding Label}"
                        Margin="15 12"
                        VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
                        />
             <!-- edit content -->
             <TextBox Grid.Column="1"

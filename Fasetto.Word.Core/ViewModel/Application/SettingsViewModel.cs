@@ -53,6 +53,12 @@ namespace Fasetto.Word.Core
             //create commands
             OpenCommand = new RelayCommand(Open);
             CloseCommand = new RelayCommand(Close);
+
+            //TODO: remove
+            Name = new TextEntryViewModel { Label = "Name", OriginalText = "Pielkop Cain" };
+            Username = new TextEntryViewModel { Label = "Username", OriginalText = "pielkop" };
+            Password = new TextEntryViewModel { Label = "Password", OriginalText = "*******" };
+            Email = new TextEntryViewModel { Label = "Email", OriginalText = "Pielkop@cain.co.za" };
         }
 
         #endregion
