@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fasetto.Word"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="600">
+             >
 
     <Border Background="{StaticResource ForegroundLightBrush}"
             Padding="15">
@@ -26,6 +26,7 @@
                         Content="{StaticResource FontAwesomeArrowLeftIcon}"
                         FontFamily="{StaticResource FontAwesome}"
                         Foreground="{StaticResource ForegroundDarkBrush}"
+                        IsCancel="True"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Height="40"
@@ -51,23 +52,46 @@
             </Grid>
             
             <!-- main content -->
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1"
+                  VerticalAlignment="Top"
+                  Width="600"
+                  >
+                
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 
                 <!-- profile picture -->
-                <Border CornerRadius="8"
-                        Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                        VerticalAlignment="Top">
+                <Grid Margin="0 0 30 0"
+                      Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                      >
 
-                    <Border.Background>
-                        <ImageBrush ImageSource="/Images/Samples/ass.jpg"
-                                    Stretch="UniformToFill"/>
-                    </Border.Background>
+                    <!-- mask for rounded corners -->
+                    <Border CornerRadius="8"
+                            Name="Mask"
+                            Background="White"
+                            />
 
-                </Border>
+                    <Grid>
+                        <Grid.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=Mask}" />
+                        </Grid.OpacityMask>
+
+                        <Image Source="/Images/Samples/ass.jpg"
+                               Stretch="Uniform"/>
+                    </Grid>
+
+                </Grid>
+                
+                <!-- profile details -->
+                <StackPanel Grid.Column="1">
+                    <local:TextEntryControl />
+                    <local:TextEntryControl />
+                    <local:TextEntryControl />
+                    <local:TextEntryControl />
+                    <local:TextEntryControl />
+                </StackPanel>
                 
             </Grid>
             

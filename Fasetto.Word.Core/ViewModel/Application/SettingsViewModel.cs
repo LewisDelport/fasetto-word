@@ -8,6 +8,28 @@ namespace Fasetto.Word.Core
     /// </summary>
     public class SettingsViewModel : BaseViewModel
     {
+
+        #region Public Properties
+
+        /// <summary>
+        /// the current users name
+        /// </summary>
+        public TextEntryViewModel Name { get; set; }
+        /// <summary>
+        /// the current users username
+        /// </summary>
+        public TextEntryViewModel Username { get; set; }
+        /// <summary>
+        /// the current users password
+        /// </summary>
+        public TextEntryViewModel Password { get; set; }
+        /// <summary>
+        /// the current users email
+        /// </summary>
+        public TextEntryViewModel Email { get; set; }
+
+        #endregion
+
         #region Public Commands
 
         /// <summary>
