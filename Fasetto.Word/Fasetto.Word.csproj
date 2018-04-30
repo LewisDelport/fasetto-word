@@ -85,7 +85,6 @@
     <Compile Include="AttachedProperties\NoFrameHistoryProperty.cs" />
     <Compile Include="AttachedProperties\PasswordBoxAttachedProperties.cs" />
     <Compile Include="AttachedProperties\TextEntryWidthMatcherProperty.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Controls\BubbleContent.xaml.cs">
       <DependentUpon>BubbleContent.xaml</DependentUpon>
     </Compile>
@@ -137,10 +136,11 @@
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConverters\ApplicationPageHelpers.cs" />
+    <Compile Include="ValueConverters\ApplicationPageValueConverter - Copy.cs" />
     <Compile Include="ValueConverters\BooleanInvertConverter.cs" />
     <Compile Include="ValueConverters\IconTypeToFontAwesomeConverter.cs" />
     <Compile Include="ValueConverters\IoCConverter.cs" />
-    <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\MenuItemTypeVisibilityConverter.cs" />
     <Compile Include="ValueConverters\PopupContentConverter.cs" />

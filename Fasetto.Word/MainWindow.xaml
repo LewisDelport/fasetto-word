@@ -162,12 +162,12 @@
             </Border>
                     
             <local:PageHost Grid.Column="1"
-                   x:Name="MainFrame"
-                   d:DataContext=""
-                   DataContext="{Binding ApplicationViewModel.CurrentPage,
-                                        Source={x:Static local:ViewModelLocator.Instance},
-                                        Converter={local:ApplicationPageValueConverter}}"
-                   CurrentPage="{Binding}"/>
+                            x:Name="MainFrame"
+                            CurrentPage="{Binding ApplicationViewModel.CurrentPage,
+                                Source={x:Static local:ViewModelLocator.Instance}}"
+                            CurrentPageViewModel="{Binding ApplicationViewModel.CurrentPageViewModel,
+                                Source={x:Static local:ViewModelLocator.Instance}}"
+                            />
 
             <!-- side menu -->
             <local:SideMenuControl Width="300"
