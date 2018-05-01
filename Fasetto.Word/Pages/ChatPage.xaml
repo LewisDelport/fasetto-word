@@ -65,17 +65,18 @@
         </Grid>
 
         <!-- chat list -->
-        <local:ChatMessageListControl Grid.Row="1" DataContext="{Binding}"/>
+        <local:ChatMessageListControl x:Name="ChatMessageList" Grid.Row="1" DataContext="{Binding}"/>
         
         <!-- attachment menu popup -->
-        <local:BubbleContent Grid.Row="1"
-                             Panel.ZIndex="2"
-                             DataContext="{Binding AttachmentMenu}"
-                             VerticalAlignment="Bottom"
-                             HorizontalAlignment="Left"
-                             local:AnimateSlideInFromBottomProperty.Value="{Binding ViewModel.AttachmentMenuVisible, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ChatPage}}}"
-                             />
-        <!--DataContext="{Binding ViewModel.AttachmentMenu, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ChatPage}}}"-->
+        <Border Grid.Row="1"
+                Panel.ZIndex="2"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                local:AnimateSlideInFromBottomProperty.Value="{Binding AttachmentMenuVisible}">
+            
+            <local:BubbleContent DataContext="{Binding AttachmentMenu}"/>
+
+        </Border>
         
         <!-- send message bar -->
         <Grid Grid.Row="2"
