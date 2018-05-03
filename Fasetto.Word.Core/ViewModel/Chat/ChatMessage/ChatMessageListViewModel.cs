@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace Fasetto.Word.Core
@@ -15,7 +16,7 @@ namespace Fasetto.Word.Core
         /// <summary>
         /// the chat thread items for the list
         /// </summary>
-        public List<ChatMessageListItemViewModel> Items { get; set; }
+        public ObservableCollection<ChatMessageListItemViewModel> Items { get; set; }
         /// <summary>
         /// the viewmodel for the attachment menu
         /// </summary>
@@ -28,6 +29,10 @@ namespace Fasetto.Word.Core
         /// true if any popup menus are visible
         /// </summary>
         public bool AnyPopupVisible => AttachmentMenuVisible;
+        /// <summary>
+        /// the text for the current message being written
+        /// </summary>
+        public string PendingMessageText { get; set; }
 
         #endregion
 
@@ -86,14 +91,27 @@ namespace Fasetto.Word.Core
         /// <summary>
         /// when the user clicks the send button, sends the message
         /// </summary>
-        private void Send()
+        public void Send()
         {
-            IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+            if (string.IsNullOrEmpty(PendingMessageText))
+                return;
+
+            if (Items == null)
+                Items = new ObservableCollection<ChatMessageListItemViewModel>();
+
+            //fake send a new message
+            Items.Add(new ChatMessageListItemViewModel
             {
-                Title = "Send Message",
-                Message = "Thank you for writing a nice message :)",
-                OkText = "OK"
+                Initials = "PC",
+                Message = PendingMessageText,
+                MessageSentTime = DateTime.UtcNow,
+                SentByMe = true,
+                SenderName = "Pielkop Cain",
+                NewItem = true
             });
+
+            //message sent - clear the pending messsage text
+            PendingMessageText = string.Empty;
         }
 
         #endregion

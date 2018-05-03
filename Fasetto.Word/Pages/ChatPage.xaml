@@ -99,6 +99,7 @@
             <Button Grid.Column="0"
                     Style="{StaticResource IconGrowButton}"
                     Content="{StaticResource FontAwesomePaperclipIcon}"
+                    Focusable="False"
                     Foreground="Black"
                     Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
                     VerticalAlignment="Top"
@@ -106,14 +107,18 @@
                     />
 
             <TextBox Grid.Column="1"
+                     x:Name="MessageText"
+                     local:IsFocusedProperty.Value="True"
+                     Text="{Binding PendingMessageText, UpdateSourceTrigger=PropertyChanged}"
                      Tag="Write a message..."
                      FontSize="{StaticResource FontSizeRegular}"
                      BorderThickness="0"
                      Padding="0 10 10 10"
-                     AcceptsReturn="True"
                      AcceptsTab="True"
+                     AcceptsReturn="True"
                      VerticalAlignment="Center"
                      VerticalScrollBarVisibility="Auto"
+                     PreviewKeyDown="MessageText_PreviewKeyDown"
                      />
                 
             <!-- emoticon/send button -->
@@ -126,9 +131,11 @@
                         Content="{StaticResource FontAwesomeEmojiIcon}"
                         Foreground="{StaticResource WordOrangeBrush}"
                         Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
+                        Focusable="False"
                         />
                 <Button Content="Send"
                         Padding="8"
+                        Focusable="False"
                         Background="{StaticResource WordGreenBrush}"
                         FontSize="{StaticResource FontSizeRegular}"
                         Command="{Binding SendCommand}"
