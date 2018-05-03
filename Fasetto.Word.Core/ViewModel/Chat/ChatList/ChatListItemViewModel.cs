@@ -140,12 +140,18 @@ namespace Fasetto.Word.Core
                     new ChatMessageListItemViewModel
                     {
                         Message = "Dummy Message 3",
+                        ImageAttachment = new ChatMessageListItemImageAttachmentViewModel
+                        {
+                            ThumbnailUrl = "http://anywhere.crap",
+
+                        },
                         Initials = "KF",
                         MessageSentTime = DateTime.UtcNow,
                         ProfilePictureRGB = "FF0000",
                         SenderName = "Kiewiet",
                         SentByMe = false,
                     },
+
                 }
             });
         }

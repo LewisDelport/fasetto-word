@@ -49,5 +49,17 @@ namespace Fasetto.Word.Core
         /// used as a flag for animating in
         /// </summary>
         public bool NewItem { get; set; }
+        /// <summary>
+        /// the attachment to the message, if it is of an image type
+        /// </summary>
+        public ChatMessageListItemImageAttachmentViewModel ImageAttachment { get; set; }
+        /// <summary>
+        /// a flag indicating if we have any message text or not
+        /// </summary>
+        public bool HasMessage => Message != null;
+        /// <summary>
+        /// a flag indicating if we have an image attachment to this message
+        /// </summary>
+        public bool HasImageAttachment => ImageAttachment != null;
     }
 }
