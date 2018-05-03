@@ -76,21 +76,41 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     
+                    <!-- image loading glyph -->
+                    <Border HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
+                            VerticalAlignment="Top"
+                            >
+
+                        <TextBlock Style="{StaticResource SpinningText}"
+                                   Padding="20"
+                                   FontSize="{StaticResource FontSizeXLarge}"
+                                   Foreground="{StaticResource ForegroundLightBrush}"
+                                   DataContext="{Binding ImageAttachment}"
+                                   Visibility="{Binding ImageLoaded,
+                                                        Converter={local:BooleanToVisibilityGoneConverter},
+                                                        ConverterParameter=True,
+                                                        FallbackValue=Collapsed}"
+                                   />
+                        
+                    </Border>
+
                     <!-- image attachment -->
                     <Border CornerRadius="10"
                             Margin="0 0 0 15"
                             >
 
                         <Image DataContext="{Binding ImageAttachment}"
-                               Source="{Binding LocalFilePath}"
+                               Source="{Binding LocalFilePath, NotifyOnTargetUpdated=True}"
                                MaxWidth="600"
                                local:ClipFromBorderProperty.Value="True"
+                               local:FadeInImageOnLoadProperty.Value="True"
                                />
 
                     </Border>
 
                     <!-- chat message text bubble -->
                     <Grid Grid.Row="1"
+                          HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
                           Visibility="{Binding HasMessage, Converter={local:BooleanToVisibilityGoneConverter}}"
                           >
 
