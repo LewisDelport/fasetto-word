@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Fasetto.Word.Core;
+using System;
 using System.Threading.Tasks;
-using Fasetto.Word.Core;
 using System.Windows;
 
 namespace Fasetto.Word
