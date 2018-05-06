@@ -25,6 +25,8 @@ namespace Fasetto.Word.Core
         /// </summary>
         public ChatMessageListDesignModel()
         {
+            DisplayTitle = "PielkopCain, Me[Design]";
+
             Items = new ObservableCollection<ChatMessageListItemViewModel>()
             {
                 new ChatMessageListItemViewModel()
