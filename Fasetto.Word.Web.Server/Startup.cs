@@ -40,8 +40,28 @@ namespace Fasetto.Word.Web.Server
                 //forgot password links, phone number verification codes etc...
                 .AddDefaultTokenProviders();
 
-            //TODO: change login url
-            //TODO: change cookie timeout
+            //change password policy
+            services.Configure<IdentityOptions>(options => 
+            {
+                //make really weak passwords possible
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
+
+            //alter application cookie info
+            services.ConfigureApplicationCookie(options =>
+            {
+                //redirect to /login
+                options.LoginPath = "/login";
+
+                //change cookie timeout to expire in 15 seconds
+                options.ExpireTimeSpan = TimeSpan.FromSeconds(15);
+            });
+
+
 
             services.AddMvc();
         }
