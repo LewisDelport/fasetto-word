@@ -20,12 +20,7 @@ namespace Fasetto.Word
             //setup the main application
             ApplicationSetup();
 
-            IoC.Logger.Log("This is debug", LogLevel.Debug);
-            IoC.Logger.Log("This is verbose", LogLevel.Verbose);
-            IoC.Logger.Log("This is info", LogLevel.Informative);
-            IoC.Logger.Log("This is warning", LogLevel.Warning);
-            IoC.Logger.Log("This is error", LogLevel.Error);
-            IoC.Logger.Log("This is success", LogLevel.Success);
+            IoC.Logger.Log("Application starting...", LogLevel.Debug);
 
             //show the main window
             Current.MainWindow = new MainWindow();

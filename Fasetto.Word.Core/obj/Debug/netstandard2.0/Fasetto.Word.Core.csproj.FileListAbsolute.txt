@@ -1,0 +1,17 @@
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\bin\Debug\netstandard2.0\Fasetto.Word.Core.deps.json
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\bin\Debug\netstandard2.0\Fasetto.Word.Core.dll
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\bin\Debug\netstandard2.0\Fasetto.Word.Core.pdb
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.csprojResolveAssemblyReference.cache
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.AssemblyInfoInputs.cache
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.AssemblyInfo.cs
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.dll
+C:\Users\Lewis\Documents\Visual Studio 2015\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\bin\Debug\netstandard2.0\Fasetto.Word.Core.deps.json
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\bin\Debug\netstandard2.0\Fasetto.Word.Core.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\bin\Debug\netstandard2.0\Fasetto.Word.Core.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.AssemblyInfoInputs.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.AssemblyInfo.cs
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Core\obj\Debug\netstandard2.0\Fasetto.Word.Core.pdb

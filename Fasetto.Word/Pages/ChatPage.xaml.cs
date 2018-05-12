@@ -1,8 +1,20 @@
 ﻿using Fasetto.Word.Core;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace Fasetto.Word
 {
@@ -11,20 +23,20 @@ namespace Fasetto.Word
     /// </summary>
     public partial class ChatPage : BasePage<ChatMessageListViewModel>
     {
-
         #region Constructor
 
         /// <summary>
-        /// default constructor
+        /// Default constructor
         /// </summary>
         public ChatPage() : base()
         {
             InitializeComponent();
         }
+
         /// <summary>
-        /// constructor with specific view model
+        /// Constructor with specific view model
         /// </summary>
-        /// <param name="specificViewModel">the specific view model to use for this page</param>
+        /// <param name="specificViewModel">The specific view model to use for this page</param>
         public ChatPage(ChatMessageListViewModel specificViewModel) : base(specificViewModel)
         {
             InitializeComponent();
@@ -35,71 +47,59 @@ namespace Fasetto.Word
         #region Override Methods
 
         /// <summary>
-        /// fired when the view model changes
+        /// Fired when the view model changes
         /// </summary>
         protected override void OnViewModelChanged()
         {
-            //make sure UI exists first
+            // Make sure UI exists first
             if (ChatMessageList == null)
                 return;
 
-            //fade in message list
+            // Fade in chat message list
             var storyboard = new Storyboard();
-            storyboard.AddFadeIn(0.5f);
-            //storyboard.AddSlideFromRight(0.5f, ChatMessageList.RenderSize.Width);
+            storyboard.AddFadeIn(1, from: true);
             storyboard.Begin(ChatMessageList);
 
-            //make the message box focused
+            // Make the message box focused
             MessageText.Focus();
         }
 
         #endregion
 
         /// <summary>
-        /// preview the input into the message box and respond as required
+        /// Preview the input into the message box and respond as required
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MessageText_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            //get the text box
+            // Get the text box
             var textbox = sender as TextBox;
 
-            //check if we have pressed enter
-            //if (e.Key == Key.Enter)
-            //{
-            //    //send the message
-            //    ViewModel.Send();
-            //    //mark this key handled by us
-            //    e.Handled = true;
-            //}
-
-            //above code not needed - set isdefault on send button
-
-            //check if we have pressed enter and are holding the control key
+            // Check if we have pressed enter
             if (e.Key == Key.Enter)
             {
-                //if we have control pressed
+                // If we have control pressed...
                 if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
                 {
-                    //add a new line to the message box at where the cursor is
+                    // Add a new line at the point where the cursor is
                     var index = textbox.CaretIndex;
-                    //insert the new line
+
+                    // Insert the new line
                     textbox.Text = textbox.Text.Insert(index, Environment.NewLine);
 
-                    //shift catet forward to the new line
+                    // Shift the caret forward to the newline
                     textbox.CaretIndex = index + Environment.NewLine.Length;
 
-                    //mark this key handled by us
+                    // Mark this key as handled by us
                     e.Handled = true;
                 }
                 else
-                {
-                    //send the message
+                    // Send the message
                     ViewModel.Send();
-                    //mark key as handled
-                    e.Handled = true;
-                }
+
+                // Mark the key as handled
+                e.Handled = true;
             }
         }
     }

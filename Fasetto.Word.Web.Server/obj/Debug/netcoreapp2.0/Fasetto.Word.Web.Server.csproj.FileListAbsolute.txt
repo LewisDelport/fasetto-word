@@ -1,0 +1,11 @@
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\bin\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.deps.json
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\bin\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.runtimeconfig.json
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\bin\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.runtimeconfig.dev.json
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\bin\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\bin\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.pdb
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\obj\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.csprojAssemblyReference.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\obj\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.csproj.CoreCompileInputs.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\obj\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.AssemblyInfoInputs.cache
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\obj\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.AssemblyInfo.cs
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\obj\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.dll
+C:\Users\Lewis\Documents\Visual Studio 2017\Projects\Fasetto.Word\Fasetto.Word.Web.Server\obj\Debug\netcoreapp2.0\Fasetto.Word.Web.Server.pdb
